@@ -5,7 +5,11 @@
   "scripts": {
     "start": "react-native start",
     "android": "react-native run-android",
-    "ios": "react-native run-ios"
+    "ios": "react-native run-ios",
+    "android:clean": "cd android && ./gradlew clean",
+    "android:build-apk": "cd android && ./gradlew assembleDebug",
+    "android:build": "npm run android:clean && npm run android:build-apk",
+    "postbuild": "echo '✅ APK is ready: android/app/build/outputs/apk/debug/app-debug.apk'"
   },
   "dependencies": {
     "react": "18.2.0",
