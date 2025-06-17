@@ -29,7 +29,10 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: Grant execute permission to gradlew
+      - name: Verify gradlew exists
+        run: ls -la android/gradlew
+
+      - name: Make gradlew executable
         run: chmod +x android/gradlew
 
       - name: Build debug APK
@@ -40,6 +43,7 @@ jobs:
         with:
           name: hello-world-apk
           path: android/app/build/outputs/apk/debug/app-debug.apk
+
 
 # name: Build Android APK
 
